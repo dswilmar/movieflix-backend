@@ -13,10 +13,18 @@ class DetailUserService {
             select: {
                 name: true,
                 email: true,
+                bookmarks: {
+                    select: {
+                        movie_id: true
+                    }
+                },
                 created_at: true,
                 updated_at: true
             }
         })
+        if (!user) {
+            throw new Error('Usuário inválido')
+        }
         return user
     }
 }
