@@ -15,7 +15,9 @@ class DetailUserService {
                 email: true,
                 bookmarks: {
                     select: {
-                        movie_id: true
+                        movie_id: true,
+                        movie_title: true,
+                        movie_poster_path: true
                     }
                 },
                 created_at: true,
